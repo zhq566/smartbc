@@ -3,6 +3,8 @@ smartbc
 
 smartbc - shell multibase calculator base on bc
 
+cal - cycle calculate some cmd
+
 For help with command line options, use:
 ```bash
 smartbc -h

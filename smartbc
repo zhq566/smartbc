@@ -151,7 +151,7 @@ VA=`echo "scale=$scale_num;$EQUATION" | bc `
 case $output_format in
 	'a')
 		echo base2 : `echo "obase=2;$VA" | bc `
-		echo base8 : `echo "obase=8;$VA" | bc `
+#		echo base8 : `echo "obase=8;$VA" | bc `
 		echo base10: `echo "obase=10;$VA" | bc `
 		echo base16: `echo "obase=16;$VA" | bc `
 		;;
@@ -170,3 +170,5 @@ case $output_format in
 	esac
 
 
+
+echo "---------------------"
