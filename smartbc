@@ -144,16 +144,18 @@ while echo $EQUATION | grep -q "[^0-9]0[0-7]";do
 	VA=`echo "ibase=8;$VA" | bc`
 	EQUATION=`echo $EQUATION | sed "s/\(.*[^0-9a-fA-FxX]\)\(0[0-7]*\)/\1$VA/" `
 done
-echo "Original EQUATION: $1 "
+#echo "Original EQUATION: $1 "
 echo "Decimal  EQUATION: $EQUATION"
 VA=`echo "scale=$scale_num;$EQUATION" | bc `
 
 case $output_format in
 	'a')
-		echo base2 : `echo "obase=2;$VA" | bc `
+#		echo base2 : `echo "obase=2;$VA" | bc `
 #		echo base8 : `echo "obase=8;$VA" | bc `
-		echo base10: `echo "obase=10;$VA" | bc `
-		echo base16: `echo "obase=16;$VA" | bc `
+#		echo base10: `echo "obase=10;$VA" | bc `
+		echo 0b`echo "obase=2;$VA" | bc `
+		echo `echo "obase=10;$VA" | bc `
+		echo 0x`echo "obase=16;$VA" | bc `
 		;;
 	'b')
 		echo base2 : `echo "obase=2;$VA" | bc `
